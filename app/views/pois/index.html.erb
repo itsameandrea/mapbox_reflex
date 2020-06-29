@@ -1,12 +1,23 @@
 <div
-  id="map"
   style="width: 100%; height: 600px;"
   data-controller="mapbox"
-  data-markers="<%= @markers.to_json %>"
+  data-target="mapbox.wrapper"
+  data-markers="<%= @pois.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+>
+  <div
+    data-target="mapbox.map"
+    data-reflex-permanent
+    class="w-100 h-100"
+  >
+  </div>
+</div>
 
-<form data-controller="pois" class="mt-5 container">
+<form
+  data-controller="pois"
+  data-target="pois.form"
+  class="mt-5 container"
+>
   <div class="form-group">
     <label for="poi_name">POI Name</label>
     <input

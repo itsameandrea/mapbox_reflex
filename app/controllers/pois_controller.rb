@@ -1,9 +1,6 @@
 class PoisController < ApplicationController
   def index
     @pois = Poi.geocoded
-    @markers = @pois.map do |poi|
-      { lat: poi.latitude, lng: poi.longitude}
-    end
   end
 
   def create
